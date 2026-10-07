@@ -6,13 +6,16 @@ class ModeloClima:
         elif temperatura >= 28: return 0.10
         else: return round(1-((temperatura-10)*0.05), 2) #round redondea el numero a 2 cifras,
 
-    def calcularIndice(self, Humedad:float, Nubosidad:float, FactorTemp:float, ModeloAjustado:bool = False) -> float:
+    def calcularIndice(self, Humedad: float, Nubosidad: float, FactorTemp: float,
+                       ModeloAjustado: bool = False) -> float:
         if ModeloAjustado:
-            # modelo original
-            return 0.5*Humedad + 0.3*Nubosidad + 0.2*FactorTemp
+            # ajuste de modelo
+            indice = 0.2 * Humedad + 0.7 * Nubosidad + 0.1 * FactorTemp
+            return round(indice, 2)
         else:
-            # ajuste de modelo para un mayor valor de la nubosidad
-            return 0.5 * Humedad + 0.7 * Nubosidad + 0.2 * FactorTemp
+            # modelo original
+            indice = 0.5 * Humedad + 0.3 * Nubosidad + 0.2 * FactorTemp
+            return round(indice, 2)
 
     def determinarEstado(self, indice: float) ->str:
         # clasificacion de indices segun tabla de reglas

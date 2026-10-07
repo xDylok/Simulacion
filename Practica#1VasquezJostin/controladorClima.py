@@ -10,7 +10,10 @@ class ControladorClima:
         resultadosOriginal = self.modeloClima.procesarSimulacion(datos, ModeloAjustado=False)
         self.vistaClima.mostrarTabla(resultadosOriginal, "Tabla Modelo Orignal")
         self.vistaClima.graficar(resultadosOriginal, "Comportamiento Modelo Orignal")
+
         #simular modelo ajustado
         resultadosAjustados = self.modeloClima.procesarSimulacion(datos, ModeloAjustado=True)
         self.vistaClima.mostrarTabla(resultadosAjustados, "Tabla Modelo Ajsutado")
         self.vistaClima.graficar(resultadosAjustados, "Comportamiento Modelo Ajsutado")
+
+        self.vistaClima.mostrarTablas()

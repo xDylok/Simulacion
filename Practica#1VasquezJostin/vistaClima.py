@@ -31,5 +31,7 @@ class VistaClima:
         plt.title(titulo)  # Usamos la variable titulo ("Modelo Original" o "Ajustado")
         plt.grid(True)
         plt.legend()
+        # plt.show()
 
-        plt.show()
+    def mostrarTablas(self):
+            plt.show()
