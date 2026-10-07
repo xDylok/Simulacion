@@ -15,7 +15,7 @@ class VistaClima:
         P = [fila[7] for fila in resultados] #valores
 
         plt.figure(figsize=(10, 5))
-        plt.plot(t, P, marker='o', label="Índice calculado")
+        plt.plot(t, P, marker='o', label="Indice calculado")
 
         K = 0.75
         plt.axhline(
@@ -27,8 +27,8 @@ class VistaClima:
         plt.axhline(y=0.40, color='gray', linestyle="--", label='Límite Sin Lluvia (0.40)')
 
         plt.xlabel("Tiempo (Horas)")
-        plt.ylabel("Índice de Lluvia")
-        plt.title(titulo)  # Usamos la variable titulo ("Modelo Original" o "Ajustado")
+        plt.ylabel("Indice de Lluvia")
+        plt.title(titulo)
         plt.grid(True)
         plt.legend()
         # plt.show()
